@@ -17,6 +17,10 @@ configure do
   get '/' do
     erb :index
   end
+get '/mylist.erb' do
+
+  erb :mylist
+end
 end
   
 
