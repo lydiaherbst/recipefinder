@@ -17,12 +17,6 @@ configure do
   get '/' do
     erb :index
   end
-
-get '/mylist.erb' do
-
-  erb :mylist
-end
-
     get '/findfood' do
       erb :findfood
   end
@@ -32,10 +26,12 @@ end
   end
 
   post '/login' do
-    @user = User.find(params[:username])
+    @user = User.find_by username: (params[:username])
 
     if @user
+    #  if @user.password == params[:password]
       session[:user_id] = @user
+   #   end
     end
 
     erb :index
@@ -45,9 +41,19 @@ get '/signup' do
   end
 
  post '/signup' do
+   @user = User.new(:password => params[:password], :password_confirmation => params[:password_confirmation])
+   @user.name = params[:name]
+   @user.username = params[:username]
+   @user.email = params[:email]
    
-  end
+   @user.save 
 
+   if @user
+     session[:user_id] = @user
+    end
+
+    erb :index
+  end
 
 end
   

@@ -1,16 +1,21 @@
 
 
+
+
 <% if session[:user_id] %>
 <a href="/findfood" > Find Food </a>
 <a href="/addfood" > Add Food </a>
 <%else%>
         <form method="POST" action="/login">
           <input type="text" name="username" placeholder="username">
+           <input type="text" name="password" placeholder="password">
           <input type="submit">
           
         </form>
 <a href="/signup"> Sign Up </a>
 <h1> Login </h1>
 
+
 <%end%>
+
 
