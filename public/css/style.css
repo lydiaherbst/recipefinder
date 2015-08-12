@@ -1,7 +1,7 @@
 #mylist{
   background-color: #c0dfd9;
   margin-top: 0;
-  padding-bottom: 4%;
+  padding-bottom: 1%;
   padding-right: 50%;
   position: fixed;
     left: 0;
@@ -36,4 +36,27 @@ h1{
 body{
   margin: 0;
   background-color: #e9ece5;
+}
+
+#home{
+ position: relative;
+  right: 37%;
+}
+
+#favs{
+  position: relative;
+  left: 30%;
+}
+
+#uploads{
+  position: relative;
+  left: 27%;
+}
+
+
+#logo{
+  width: 3.8%;
+  position: fixed;
+  left: 48%;
+  top: 0%;
 }
