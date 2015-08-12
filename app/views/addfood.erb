@@ -12,13 +12,13 @@
    
 <h3>    <form method="POST" action="/newrecipe">
   <h3> Title </h3><br>
-    <input type="title" name="title" placeholder="Title" class="enlargeinput"> <br>
+    <input type="text" name="title" placeholder="Title" class="enlargeinput"> <br>
     <h3> Author </h3><br>
-    <input type="ingredients" name="ingredients" placeholder= "Ingredients" class="enlargeinput"> <br>
+    <input type="text" name="ingredients" placeholder= "Ingredients" class="enlargeinput"> <br>
     <h3> Text of Page One </h3><br>
     <textarea type="text" name="text" placeholder= "Text of Page One" class="enlargeparagraph" rows="40" cols="100" ></textarea>
  <br>
-    <h3>Genre:</h3>
+<!--     <h3>Genre:</h3>
     <input type="radio" name="genre" value= "Classic" checked >Classic <br>
 <input type="radio" name="genre" value= "Fiction" checked > Fiction <br>
     <input type="radio" name="genre" value= "Nonfiction" checked >Nonfiction <br>
@@ -27,10 +27,10 @@
     <input type="text" name="imagelink" placeholder= "Image URL" class="enlargeinput"> <br>
     <h3> Amazon Link </h3><br>
     <input type="text" name="amazonlink" placeholder= "Amazon Link" class="enlargeinput"> <br><br>
-    <input type="submit" id= "submit">
+    <input type="submit" id= "submit"> -->
   </form> </h3>
 <!--     <p>
-      <%=@random_text%>
+<%=@random_title%>
     </p>
     <div id="button1">
     <form method="POST">
@@ -41,7 +41,7 @@
     <div id="button2">
     <form method"POST" action="/reveal_book">
       <input type="submit" value="Reveal Book" id="submit">
-      <input type="hidden" name="text" value="<%=@random_text%>">
+<input type="hidden" name="text" value="<%=@random_title%>">
     </form>
     </div> -->
     <br><br>
