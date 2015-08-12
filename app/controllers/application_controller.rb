@@ -19,9 +19,11 @@ configure do
   end
     get '/findfood' do
       erb :findfood
-  end
+    end
+
 
  get '/addfood' do
+   erb :addfood
     
   end
 
@@ -38,7 +40,7 @@ configure do
   end
 get '/signup' do
   erb :signup
-  end
+end
 
  post '/signup' do
    @user = User.new(:password => params[:password], :password_confirmation => params[:password_confirmation])
@@ -55,6 +57,18 @@ get '/signup' do
     erb :index
   end
 
+get '/mylist' do
+  erb :mylist
+  end
+post '/recipe' do
+  @recipe = Recipe.new
+  @recipe.message = params[:message]
+  @recipe.user_id = params[:user]
+  @recipe.save
+  
+  erb :mylist
+end
+  
 end
   
 
