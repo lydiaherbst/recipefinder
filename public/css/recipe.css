@@ -1,0 +1,28 @@
+@import url(http://fonts.googleapis.com/css?family=Merriweather:700);
+h1 {
+  position: relative;
+  text-align: center;
+  right: 1%;
+ font-family: 'Merriweather', serif;
+  font-size: 30px;
+ }
+
+#pancakes {
+  display: block;
+  margin: 0 auto;
+  border-radius: 30px;
+  width: 40%;
+  length: auto;
+}
+
+h2 {
+  text-align: center;
+  text-decoration: underline;
+}
+
+.center{
+  font-size:17px;
+    width:130px;
+    margin:0 auto;
+    text-align:left;
+}

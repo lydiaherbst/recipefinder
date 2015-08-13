@@ -5,19 +5,34 @@
    <link rel="stylesheet" type="text/css" href="css/style.css">
   <meta charset="UTF-8">
   <title>title</title>
-   <div>
+  
+ </head>
+ <body>
+    <div>
    <nav>
      <ul id="mylist">
        <a href="/">Home</a>
-       <a href="/uploads">My uploads</a>
-       <a href="/favorites">Favorites</a>
+       <a href="/uploads">My Uploads</a>
+       <a href="/mylist">My List</a>
          
      </ul>
    </nav>
    </div>
- </head>
- <body>
+  
+   <% @like= Like.where(user_id: session[:user_id]) %>
+   <% @like.each do |l| 
+  @post= Post.find(l.post_id) %>
    
+   <form method="POST" action="/recipe">
+   <input type="image" src=<%= @post.image %>> 
+     <input type="hidden" name="post" value="<%= @post.id %>">
+     <input type="hidden" name="userid" value="<%= session[:user_id].id %>">
+   
+     
+   </form>
+   
+   <h2><%= @post.title %></h2>
+   <% end %>
   
       
    <a href="recipe.erb"><img id="shrek" src="http://vignette4.wikia.nocookie.net/shrek/images/8/87/Shrek_fierce.jpg/revision/latest?cb=20100604223615"></a>

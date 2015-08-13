@@ -4,6 +4,9 @@ require 'bcrypt'
 
 require './config/environment.rb'
 require './app/models/user.rb'
+require './app/models/like.rb'
+require './app/models/post.rb'
+require './app/models/comment.rb'
 
 class ApplicationController < Sinatra::Base
 configure do
@@ -22,7 +25,7 @@ configure do
   end
 
  get '/addfood' do
-    
+   erb :addfood
   end
 
   post '/login' do
@@ -40,6 +43,20 @@ get '/signup' do
   erb :signup
   end
 
+post '/newrecipe' do
+  @post= Post.new(:title => params[:title], 
+    :ingredients => params[:ingredients],
+    :recipe => params[:recipe],
+    :image => params[:image])
+  @post.save
+  if @post.save
+  @message= "Your Recipe Has Been Submitted!"
+  else
+    @error= "Failure. Try Again!"
+  end
+  erb :index
+end
+
  post '/signup' do
    @user = User.new(:password => params[:password], :password_confirmation => params[:password_confirmation])
    @user.name = params[:name]
@@ -54,6 +71,26 @@ get '/signup' do
 
     erb :index
   end
+ post '/like' do
+  if Like.exists?(:post_id => params[:postid], 
+     :user_id => params[:userid])
+ else
+   @like= Like.new(:user_id => params[:userid], 
+     :post_id => params[:postid])
+   @like.save
+  end
+   erb :findfood
+  end
+post '/mylist' do
+  erb :findfood
+  end
+get '/mylist' do
+  erb :mylist
+end
+post '/recipe' do
+  erb :recipe
+  end
+
 
 end
   

@@ -1,15 +1,25 @@
-
 <!DOCTYPE html>
 <html>
  <head>
+   <meta charset="UTF-8">
+   <link rel="stylesheet" type="text/css" href="css/find-food.css">
   <title>Food.Finder</title>
  </head>
  <body>
-   <h1>3 Ingredient Pancakes</h1>
-   <img id="pancakes" src="http://paleonewbie.com/wp-content/uploads/2014/09/PaleoNewbie-Apple-Banana-Cinnamon-Pancakes-3-1266x850.jpg">
+   <a href="/mylist">My List</a>
+   <% @post=Post.all.sample %>
+   <h2><%=@post.title %></h2>
+   <img id="foodimage" src="<%= @post.image %>">
    
-   <INPUT TYPE="image" SRC="http://www.dingle.fi/wp-content/uploads/2014/03/tinder_cross.png" ALT="SUBMIT" id="cross"/>
-  <INPUT TYPE="image" SRC="http://www.gotinder.com/images/icons/heart@2x.png" ALT="SUBMIT" id="heart"/>
+   <a href='/findfood'><INPUT TYPE="image" SRC="http://www.dingle.fi/wp-content/uploads/2014/03/tinder_cross.png" ALT="SUBMIT" id="cross"/></a>
+   <form method="POST" action="/like">
+     <input type="hidden" name="postid" value="<%= @post.id %>">
+     <input type="hidden" name="userid" value="<%= session[:user_id].id %>">
+  <INPUT TYPE="image" SRC="https://dxuu1kmv6dm3n.cloudfront.net/v7/img/heart.png" ALT="SUBMIT" id="heart"/>
+     
+   </form>
   
  </body>
 </html>
+
+

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Food.Finder</title>
+ </head>
+ <body>
+   <% @post = Post.find(params[:post])%>
+   <h1><%= @post.title %></h1>
+   <p><%= @post.ingredients %></p>
+   <p> <%= @post.recipe %></p>
+
+
+
+   
+ </body>
+</html>
