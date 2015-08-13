@@ -22,10 +22,12 @@ configure do
   end
     get '/findfood' do
       erb :findfood
-  end
+    end
+
 
  get '/addfood' do
    erb :addfood
+
   end
 
   post '/login' do
@@ -41,7 +43,7 @@ configure do
   end
 get '/signup' do
   erb :signup
-  end
+end
 
 post '/newrecipe' do
   @post= Post.new(:title => params[:title], 
@@ -92,6 +94,18 @@ post '/recipe' do
   end
 
 
+get '/mylist' do
+  erb :mylist
+  end
+post '/recipe' do
+  @recipe = Recipe.new
+  @recipe.message = params[:message]
+  @recipe.user_id = params[:user]
+  @recipe.save
+  
+  erb :mylist
+end
+  
 end
   
 
