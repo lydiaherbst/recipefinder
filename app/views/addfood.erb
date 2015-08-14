@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<% if session[:user_id] %> <!--checks if user is logged in already -->
+<html>
 <html>
 <!--   <head> -->
 <!--     <meta charset="UTF-8"> -->
@@ -9,12 +10,15 @@
      <ul id="mylist">
        <a href="/">Home</a>
        <a href="/mylist">My List</a> 
+          <form method="POST" action="/logout">
+  <input type="submit" value="Logout">
+</form>
      </ul>
    </nav>
   <br>
   <body>
     <h1><a href="/" id="main">Campfire</a></h1>
-    <h2>slogan</h2>
+
    
 <h3>    <form method="POST" action="/newrecipe">
   <h3> Title </h3><br>
@@ -53,3 +57,4 @@
     <br><br>
   </body>
 </html>
+  <%end%>

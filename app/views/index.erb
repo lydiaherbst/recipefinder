@@ -1,16 +1,19 @@
-
-
-
-<% if session[:user_id] %>
+<% if session[:user_id] %> <!--checks if user is logged in already -->
+   
 
   <nav>
+ 
      <ul id="mylist">
 <!--        <a href="/">Home</a> -->
        <a href="/findfood" > Find Food </a>
        <a href="/addfood" > Add Food </a>
        <a href="/mylist">My List</a> 
+          <form method="POST" action="/logout">
+  <input type="submit" value="Logout">
+       </form>
      </ul>
    </nav>
+ 
 <% if @error %>
 <%= @error %>
 <% end %>
@@ -21,12 +24,12 @@
 <%else%>
         <form method="POST" action="/login">
           <input type="text" name="username" placeholder="username">
-           <input type="text" name="password" placeholder="password">
+           <input type="password" name="password" placeholder="password">
           <input type="submit">
           
         </form>
 <a href="/signup"> Sign Up </a>
-<h1> Login </h1>
+
 
 
 <%end%>

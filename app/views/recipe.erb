@@ -1,23 +1,29 @@
+<% if session[:user_id] %> <!--checks if user is logged in already -->
 <!DOCTYPE html>
 <html>
  <head>
   <title>Food.Finder</title>
  </head>
+  <% if session[:user_id] %> <!--checks if user is logged in already -->
+  
      <nav>
      <ul id="mylist">
        <a href="/">Home</a>
        <a href="/mylist">My List</a>
- 
+   <form method="POST" action="/logout">
+  <input type="submit" value="Logout">
+</form>
          
      </ul>
    </nav>
+  <% end %>
  <body>
    <% @post = Post.find(params[:post])%>
    <h1><%= @post.title %></h1>
    <p><%= @post.ingredients %></p>
    <p> <%= @post.recipe %></p>
    
-
+   <% end %>
 
 
    

@@ -45,6 +45,13 @@ get '/signup' do
   erb :signup
 end
 
+  post '/logout' do 
+    session[:user_id] = nil
+
+    erb :index
+  end 
+
+
 post '/newrecipe' do
   @post= Post.new(:title => params[:title], 
     :ingredients => params[:ingredients],

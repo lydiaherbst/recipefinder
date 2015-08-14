@@ -1,7 +1,7 @@
 <% if session[:user_id] %> <!--checks if user is logged in already -->
 <form method="POST" action="/logout">
   <input type="submit" value="Logout">
-  
+  <%end%>
 <!DOCTYPE html>
 <html>
  <head>
@@ -13,6 +13,9 @@
      <ul id="mylist">
        <a href="/">Home</a>
        <a href="/mylist">My List</a>
+       <form method="POST" action="/logout">
+       <input type="submit" value="Logout">
+       </form>
  
          
      </ul>
