@@ -1,12 +1,10 @@
- <!doctype html>
-<html>
-<head>
+ <head>
+
    <link rel="stylesheet" type="text/css" href="css/index.css">
   <meta charset="UTF-8">
   <title>title</title>
   
  </head>
-  <body>
 <% if session[:user_id] %> <!--checks if user is logged in already -->
    
 
@@ -23,6 +21,7 @@
      </ul>
    </nav>
 
+ 
 <% if @error %>
 <%= @error %>
 <% end %>
@@ -31,6 +30,7 @@
 <% end %>
 
 <%else%>
+
         <nav>
      <ul id="mylist">
        <h2>Login</h2>
@@ -38,24 +38,7 @@
 
      </ul>
    </nav>
-<br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <form method="POST" action="/login">
           <input type="text" name="username" placeholder="username">
            <input type="password" name="password" placeholder="password">
@@ -63,12 +46,14 @@
           
         </form>
 
-<!--   
-  <div id="signup">
-<a href="/signup"> Sign Up </a> -->
   </div>
+<!--   <div id="signup">
+<a href="/signup"> Sign Up </a>
+  </div> -->
+
 
 <%end%>
-</body>
-</html>
+
+ <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
 
