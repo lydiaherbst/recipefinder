@@ -1,16 +1,23 @@
 
 
 
-
 <% if session[:user_id] %>
-<a href="/findfood" > Find Food </a>
-<a href="/addfood" > Add Food </a>
+
+  <nav>
+     <ul id="mylist">
+<!--        <a href="/">Home</a> -->
+       <a href="/findfood" > Find Food </a>
+       <a href="/addfood" > Add Food </a>
+       <a href="/mylist">My List</a> 
+     </ul>
+   </nav>
 <% if @error %>
 <%= @error %>
 <% end %>
 <% if @message %>
 <%= @message %>
 <% end %>
+
 <%else%>
         <form method="POST" action="/login">
           <input type="text" name="username" placeholder="username">

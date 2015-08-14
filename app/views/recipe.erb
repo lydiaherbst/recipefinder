@@ -3,11 +3,20 @@
  <head>
   <title>Food.Finder</title>
  </head>
+     <nav>
+     <ul id="mylist">
+       <a href="/">Home</a>
+       <a href="/mylist">My List</a>
+ 
+         
+     </ul>
+   </nav>
  <body>
    <% @post = Post.find(params[:post])%>
    <h1><%= @post.title %></h1>
    <p><%= @post.ingredients %></p>
    <p> <%= @post.recipe %></p>
+   
 
 
 
