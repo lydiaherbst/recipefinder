@@ -1,3 +1,7 @@
+<% if session[:user_id] %> <!--checks if user is logged in already -->
+<form method="POST" action="/logout">
+  <input type="submit" value="Logout">
+  
 <!DOCTYPE html>
 <html>
  <head>
