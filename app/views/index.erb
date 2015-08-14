@@ -1,34 +1,37 @@
-
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta charset="UTF-8">
+   <link rel="stylesheet" type="text/css" href="css/index.css">
+  <title>Food</title>
+ </head>
+<body>
 
 
 <% if session[:user_id] %>
-
-  <nav>
-     <ul id="mylist">
-<!--        <a href="/">Home</a> -->
-       <a href="/findfood" > Find Food </a>
-       <a href="/addfood" > Add Food </a>
-       <a href="/mylist">My List</a> 
-     </ul>
-   </nav>
+<a href="/findfood" > Find Food </a>
+<a href="/addfood" > Add Food </a>
 <% if @error %>
 <%= @error %>
 <% end %>
 <% if @message %>
 <%= @message %>
 <% end %>
-
 <%else%>
+  <h1> Login </h1>
+  <div id="login">
         <form method="POST" action="/login">
           <input type="text" name="username" placeholder="username">
            <input type="text" name="password" placeholder="password">
           <input type="submit">
           
         </form>
+  </div>
 <a href="/signup"> Sign Up </a>
-<h1> Login </h1>
+
 
 
 <%end%>
-
+  </body>
+</html>
 
