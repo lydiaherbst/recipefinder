@@ -11,12 +11,13 @@ input {
             0 0 16px rgba(0,0,0,0.1); 
     padding: 10px;
     background: rgba(255,255,255,0.5);
-    margin: 50px 0.5% 10% 0;
+    margin: 50px 0.2% 10% 0;
   font-size: 20px; 
 }
 
 a {
-  margin: 1% 0 10px 0;
+  position: absoluto;
+  top: -100%;
 }
 
 h1 {
