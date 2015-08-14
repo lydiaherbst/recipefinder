@@ -1,10 +1,12 @@
- <head>
-
+ <!doctype html>
+<html>
+<head>
    <link rel="stylesheet" type="text/css" href="css/index.css">
   <meta charset="UTF-8">
   <title>title</title>
   
  </head>
+  <body>
 <% if session[:user_id] %> <!--checks if user is logged in already -->
    
 
@@ -21,7 +23,6 @@
      </ul>
    </nav>
 
- 
 <% if @error %>
 <%= @error %>
 <% end %>
@@ -30,6 +31,31 @@
 <% end %>
 
 <%else%>
+        <nav>
+     <ul id="mylist">
+       <h2>Login</h2>
+       <a href="/signup">Sign Up</a>
+
+     </ul>
+   </nav>
+<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
         <form method="POST" action="/login">
           <input type="text" name="username" placeholder="username">
            <input type="password" name="password" placeholder="password">
@@ -37,12 +63,12 @@
           
         </form>
 
-  </div>
+<!--   
   <div id="signup">
-<a href="/signup"> Sign Up </a>
+<a href="/signup"> Sign Up </a> -->
   </div>
-
 
 <%end%>
-
+</body>
+</html>
 
